@@ -5,23 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whiskey Drop I Taste a new whiskey every month</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
    <nav class="navbar navbar-light bg-light navbar-expand-sm">
       <a href="/" class="navbar-brand">Whiskey Drop</a>
-      <ul class="navbar-nav mr-auto">
-         <li class="active nav-item mr-2"><a href="/" class="nav-link">Home</a></li>
-         <li class="nav-item mr-2"><a href="/about" class="nav-link">About</a></li>
-         <li class="nav-item mr-2 d-block d-sm-none"><a href="/login" class="nav-link">Sign In / Sign Up</a></li>
-      </ul>
+
+      <button type="button" class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="fasle" aria-label="Toggle navigation">
+         <span class="navbar-toggle-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+         <ul class="navbar-nav mr-auto">
+            <li class="active nav-item mr-2"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item mr-2"><a href="/about" class="nav-link">About</a></li>
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Whiskeys</a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                   <a class="dropdown-item" href="#">Irish</a>
+                   <a class="dropdown-item" href="#">Scotish</a>
+                   <a class="dropdown-item" href="#">Japanese</a>
+                   <a class="dropdown-item" href="#">American</a>
+               </div>
+            </li>
+            <li class="nav-item mr-2 d-block d-sm-none"><a href="/login" class="nav-link">Sign In / Sign Up</a></li>
+         </ul>
+      </div>
       <div class="d-none d-md-block">
          <p class="navbar-text my-auto mr-2"><i>Great whiskey delivered to your door!</i></p>
          <a href="/login">Sign In / Sign Up</a>
     </div> 
    </nav>
-   <article class="container mt-3">
+   <!-- <div class="container alert-container">
       <div class="row d-none d-sm-block">
          <div class="col-12">
             <div class="alert alert-warning">
@@ -30,24 +49,29 @@
             </div>
          </div>
       </div>
-      <!-- Callout-->
+   </div> -->
+   <div class="container-fluid callout-container">
+      <!-- Callout -->
+      <div class="opaque-overlay">&nbsp;</div>
       <div class="row">
        <div class="col-12">
          <section class="callout jumbotron text-center">
-            <h1>The finest whiskeys delivered to your doorstep.</h1>
+            <h1 class="jumbotron-header">The finest whiskeys delivered to your doorstep.</h1>
+            <hr class="block-divider block-divider--orange">
             <p class="lead">Sign up today to start receiving the world's best whiskeys every month. 
                <s class="d-none d-sm-inline">€19.99</s>
                <span class="d-inline d-sm-none"><br></span>
                <strong><mark>First one is free!</mark></strong></p>
-            <button class="btn btn-success btn-lg">Sign up!</button>
+            <button class="btn btn-lg btn--cta btn--red" data-toggle="modal" data-target="#signUpModal">Sign up!</button>
             <p class="text-muted"><small>You must be over 18 to sign up to our service. Please, drink responsibly.</small></p>
          </section>
         </div>
       </div>
-      <!-- /.callout-->
-      <hr>
+      <!-- /.callout -->
+   </div>
 
-      <!-- Quotes-->
+      <!-- Quotes -->
+   <div class="container quotes-container">
       <section class="quotes">
        <div class="row">
         <div class="col-12 my-5">
@@ -84,10 +108,11 @@
         </div>
        </div>
       </section>
-      <!-- /.quotes-->
-      <hr>
+      <!-- /.quotes -->
+   </div>
 
-      <!--Features-->
+      <!-- Features -->
+   <div class="features-container">
       <section class="features">
         <div class="row">
          <div class="col-12 my-5">
@@ -118,9 +143,11 @@
          </div>
         </div>
       </section>
-      <!-- /.features-->
-      <hr>
+      <!-- /.features -->
+   </div>
 
+      <!-- Table -->
+   <div class="table-container">
       <section>
         <div class="row">
          <div class="col-12">
@@ -162,8 +189,44 @@
          </div>
         </div>
       </section>
-   </article>
-      
+      <!-- /.table -->
+   </div>
+   
+
+   <div class="modal" tabindex="-1" role="dialog" id="signUpModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Sign Up To Whiskey Drop!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+             <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+           </div>
+           <div class="form-group">
+                <label for="repeatPassword">Repeat Password</label>
+                <input type="password" class="form-control" id="repeatPassword" placeholder="Repeat Password">
+           </div>
+           <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+   </div>
+
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> 
     
     
 </body>
