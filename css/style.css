@@ -193,3 +193,14 @@ body {
     margin-top: 10px;
     color: #f05f40;
 }
+
+.table {
+    text-align: center;
+}
+
+.table i {
+    margin-bottom: 20px;
+    font-size: 45px;
+    line-height: 45px;
+}
+
